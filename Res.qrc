@@ -1,0 +1,13 @@
+<RCC>
+    <qresource prefix="/imgs">
+        <file>C:/Users/bauom/Desktop/Icons/arrow-redo-icon.png</file>
+        <file>C:/Users/bauom/Desktop/Icons/arrow-undo-icon.png</file>
+        <file>C:/Users/bauom/Desktop/Icons/close-icon.png</file>
+        <file>C:/Users/bauom/Desktop/Icons/copy-icon.png</file>
+        <file>C:/Users/bauom/Desktop/Icons/cut-icon.png</file>
+        <file>C:/Users/bauom/Desktop/Icons/document-icon.png</file>
+        <file>C:/Users/bauom/Desktop/Icons/download-icon.png</file>
+        <file>C:/Users/bauom/Desktop/Icons/folder-icon.png</file>
+        <file>C:/Users/bauom/Desktop/Icons/paste-icon.png</file>
+    </qresource>
+</RCC>

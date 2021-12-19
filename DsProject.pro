@@ -9,12 +9,16 @@ CONFIG += c++11
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
+    compress.cpp \
+    decompress.cpp \
     format.cpp \
     main.cpp \
     mainwindow.cpp \
     minify.cpp
 
 HEADERS += \
+    compress.h \
+    decompress.h \
     format.h \
     mainwindow.h \
     minify.h

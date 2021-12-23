@@ -59,6 +59,20 @@ void MainWindow::on_actionSave_As_triggered()
         out << text;
         file.close();
 }
+void MainWindow::on_actionSave_triggered()
+{
+    QFile file(currentfile);
+    if(!file.open(QFile::WriteOnly | QFile::Text))
+        {
+            QMessageBox::warning(this,"Warning" , "Cannot Save File : " + file.errorString());
+            return;
+        }
+    QTextStream in(&file);
+    QString text = ui->plainTextEdit->toPlainText();
+    in << text;
+    file.close();
+
+}
 
 
 void MainWindow::on_actionExit_triggered()
@@ -97,7 +111,7 @@ void MainWindow::on_actionRedo_triggered()
     ui->plainTextEdit->redo();
 }
 
-
+//minifying
 void MainWindow::on_pushButton_clicked()
 {
     QString file = QFileInfo(currentfile).absoluteFilePath();
@@ -114,12 +128,12 @@ void MainWindow::on_pushButton_clicked()
            x.close();
 }
 
-
+//formatting
 void MainWindow::on_pushButton_3_clicked()
 {
     QString file = QFileInfo(currentfile).absoluteFilePath();
     string input =file.toStdString();
-    format(input,"Demo.xml");
+    formatting(input,"Demo.xml");
     QFile x("Demo.xml");
            if(!x.open(QIODevice::ReadOnly | QFile::Text))
            {
@@ -134,7 +148,7 @@ void MainWindow::on_pushButton_3_clicked()
 
 }
 
-
+//compression
 void MainWindow::on_pushButton_2_clicked()
 {
     int size_original = 0;
@@ -155,7 +169,7 @@ void MainWindow::on_pushButton_2_clicked()
 
 }
 
-
+//Decompression
 void MainWindow::on_pushButton_6_clicked()
 {
     QString filter = "All Files (*.*) ;; HUF Files (*.huf)";
@@ -182,8 +196,37 @@ void MainWindow::on_pushButton_6_clicked()
     ui->plainTextEdit->setPlainText(text);
 
     filede.close();
+}
 
 
+void MainWindow::on_pushButton_4_clicked()
+{
+    QString file = QFileInfo(currentfile).absoluteFilePath();
+    string input =file.toStdString();
+    XML2JSON(input,"Demo.json","Dummy.txt");
+    QFile x("Demo.json");
+           if(!x.open(QIODevice::ReadOnly | QFile::Text))
+           {
+               QMessageBox::warning(this,"Warning" , "Cannot Open File : " + x.errorString());
+           }
+           QTextStream inx(&x);
+           QString textx = inx.readAll();
+           ui->plainTextEdit->setPlainText(textx);
+           x.close();
+}
+
+
+void MainWindow::on_pushButton_5_clicked()
+{
+    QString file = QFileInfo(currentfile).absoluteFilePath();
+    string input =file.toStdString();
+   if(XMLConsistency(input)){
+    QMessageBox::information(this,"ErrorCheck","There is an error");}
+   else{
+       QMessageBox::information(this,"ErrorCheck","There is NO error");
+   }
 
 }
+
+
 

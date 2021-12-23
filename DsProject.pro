@@ -9,19 +9,23 @@ CONFIG += c++11
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
+    checkConsistency.cpp \
     compress.cpp \
     decompress.cpp \
     format.cpp \
     main.cpp \
     mainwindow.cpp \
-    minify.cpp
+    minify.cpp \
+    xml2json.cpp
 
 HEADERS += \
+    checkConsistency.h \
     compress.h \
     decompress.h \
     format.h \
     mainwindow.h \
-    minify.h
+    minify.h \
+    xml2json.h
 
 FORMS += \
     mainwindow.ui

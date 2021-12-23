@@ -8,6 +8,6 @@
 using namespace std;
 
 void writeToOutput(string in, string out);
-void format(string in, string out);
+void formatting(string in, string out);
 
 #endif // FORMAT_H

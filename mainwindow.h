@@ -13,7 +13,8 @@
 #include<minify.h>
 #include"compress.h"
 #include"decompress.h"
-
+#include"xml2json.h"
+#include"checkConsistency.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -26,6 +27,7 @@ class MainWindow : public QMainWindow
 public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
+
 
 private slots:
     void on_actionNew_triggered();
@@ -53,6 +55,12 @@ private slots:
     void on_pushButton_2_clicked();
 
     void on_pushButton_6_clicked();
+
+    void on_pushButton_4_clicked();
+
+    void on_pushButton_5_clicked();
+
+    void on_actionSave_triggered();
 
 private:
     Ui::MainWindow *ui;
